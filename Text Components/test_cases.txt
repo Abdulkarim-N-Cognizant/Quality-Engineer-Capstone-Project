@@ -83,6 +83,8 @@ Status: TEST PASS
 
 
 
+
+
 UI TEST CASES
 
 ID: TC_UI_06
@@ -165,6 +167,8 @@ The profile page loaded successfully. The employee was found in the Employee Lis
 after performing a search.
 Status: TEST PASS
 
+
+
 ACCESSIBILITY TEST CASES
 
 ID: TC_ACC_11
@@ -211,6 +215,7 @@ Actual Result: The login page rendered correctly on Safari mobile. All fields we
 visible, responsive, and usable without layout issues.
 Status: TEST PASS
 
+
 ID: TC_CROSS_14
 Title: Dashboard Loads Consistently Across Browsers
 Testing Level: Compatibility
@@ -225,6 +230,7 @@ Expected Result:
 Actual Result: The dashboard was accessed on Chrome, Firefox, and Edge. The layout,
 widgets, and navigation menu appeared consistent across all three browsers.
 Status: TEST PASS
+
 
 
 NEGATIVE TEST CASE
