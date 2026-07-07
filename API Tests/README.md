@@ -22,3 +22,4 @@ Notes:
 - No environment variables are required.
 - No authentication is required.
 - The collection uses the public JSONPlaceholder API.
+- Trainer allowed the use of Postman for API testing due to software limitations
