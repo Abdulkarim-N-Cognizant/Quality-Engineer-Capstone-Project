@@ -1,0 +1,216 @@
+TEST PLAN DOCUMENT
+
+Project: Cross-Platform QA Showcase
+Author: Abdulkarim Noorzaie, Maleesha Wanniarachchige
+Date: July 8, 2026
+Version: 1.0
+
+1. SCOPE
+
+In Scope
+
+This project focuses on testing two application layers:
+
+API Testing
+Application: JSONPlaceholder API
+
+Endpoints Tested:
+- GET /posts
+- POST /posts
+- PUT /posts/{id}
+- DELETE /posts/{id}
+- Error handling scenarios (404 responses)
+
+UI Testing
+Application: OrangeHRM
+
+Features Tested:
+- Login functionality
+- Dashboard navigation
+- Employee management workflows
+- Form interactions
+- Validation messages
+- User interface element verification
+
+Out of Scope
+
+- Database validation
+- Security and penetration testing
+- Source code review
+- Production environment testing
+- Mobile application testing
+- Performance testing of OrangeHRM
+
+2. TEST OBJECTIVES
+
+The primary objective of this testing effort is to verify that both the API and UI layers function correctly and meet expected requirements.
+
+Specific objectives include:
+
+- Validate CRUD operations within the JSONPlaceholder API.
+- Verify accurate API responses, status codes, and data structures.
+- Ensure OrangeHRM user workflows operate correctly.
+- Confirm UI elements behave as expected.
+- Identify defects affecting functionality and usability.
+- Demonstrate automation skills using Selenium and Java.
+- Validate application quality through manual and automated testing.
+
+3. TESTING LEVELS
+
+Unit Testing
+
+- Existing application unit tests are outside the testing scope.
+- API endpoint validation will simulate component-level verification.
+
+Integration Testing
+
+- Verification that API requests and responses function correctly.
+- Validation of interactions between application components.
+
+System Testing
+
+- End-to-end testing of OrangeHRM user workflows.
+- Full API operation validation.
+
+User Acceptance Testing (UAT)
+
+- Validation that core business functionality behaves as expected from an end-user perspective.
+
+4. TEST TYPES
+
+Functional Testing
+
+- Verify application features behave according to requirements.
+
+API Testing
+
+- Validate HTTP methods, responses, status codes, and payloads.
+
+UI Automation Testing
+
+- Automate critical user workflows using Selenium WebDriver.
+
+Regression Testing
+
+- Ensure existing functionality remains stable after changes.
+
+Negative Testing
+
+- Verify proper handling of invalid inputs and unexpected conditions.
+
+Accessibility Testing
+
+- Keyboard navigation testing.
+- Basic WCAG compliance observations.
+- Colour contrast review.
+
+Cross-Browser Testing
+
+- Verify functionality across different browsers where applicable.
+
+5. TOOLS AND FRAMEWORKS
+
+Java
+Purpose: Automation development
+Reason for Selection: Improve Java development skills and align with industry-standard automation frameworks.
+
+Selenium WebDriver
+Purpose: UI automation
+Reason for Selection: Widely used tool for browser automation and end-to-end testing.
+
+Postman
+Purpose: API testing
+Reason for Selection: Efficient API testing tool approved for project requirements and compatible with workplace restrictions.
+
+Maven
+Purpose: Dependency management and build automation
+Reason for Selection: Simplifies project structure, dependency management, and test execution.
+
+IntelliJ IDEA
+Purpose: Development environment
+Reason for Selection: Provides strong Java development and automation support.
+
+JMeter
+Purpose: Load testing
+Reason for Selection: Industry-standard tool for API performance testing.
+
+GitHub
+Purpose: Source code management
+Reason for Selection: Enables version control and project collaboration.
+
+Cucumber
+Purpose: Behavior-driven development testing
+Reason for Selection: Supports business-readable test scenarios and improves stakeholder communication.
+
+6. ENTRY AND EXIT CRITERIA
+
+Entry Criteria
+
+Testing may begin when:
+
+- Application URLs are accessible.
+- Test environment is available.
+- Test cases have been prepared.
+- Automation framework has been configured.
+- Required tools have been installed successfully.
+
+Exit Criteria
+
+Testing will be considered complete when:
+
+- All planned test cases have been executed.
+- Automated API tests execute successfully.
+- Automated UI tests execute successfully.
+- BDD scenarios execute successfully.
+- Defects have been documented.
+- Test execution summary has been completed.
+- All capstone deliverables have been finalized and reviewed.
+
+7. RISKS
+
+Risk 1: Third-Party Service Availability
+
+Description:
+JSONPlaceholder is a public API and may experience outages or response delays.
+
+Mitigation:
+- Perform testing during multiple time periods.
+- Retest failures before logging defects.
+- Capture API evidence using Postman and screenshots.
+
+Risk 2: UI Changes in OrangeHRM
+
+Description:
+Page elements or locators may change and cause automation failures.
+
+Mitigation:
+- Use reliable locators where possible.
+- Implement the Page Object Model (POM) design pattern.
+- Maintain locator centralization for easier updates.
+
+Risk 3: Environment or Browser Issues
+
+Description:
+Browser updates or environment restrictions may affect automation execution.
+
+Mitigation:
+- Use stable browser versions.
+- Verify environment configuration before execution.
+- Document environment details in test reports.
+
+8. DELIVERABLES
+
+The following artifacts will be submitted:
+
+- Test Plan Document
+- Test Cases Document
+- API Test Automation Project
+- UI Test Automation Project
+- BDD Feature Files and Step Definitions
+- Defect Reports
+- Test Execution Summary
+- JMeter Load Test Files
+- Accessibility Testing Evidence
+- Screenshots and Test Evidence
+- Presentation Slides
+- Final Capstone Submission ZIP or GitHub
