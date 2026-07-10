@@ -1,88 +1,159 @@
 Defect ID: DEF-001
 
 Title: POST /posts Accepts Request with Missing Required Fields
-Environment: JSONPlaceholder API (https://jsonplaceholder.typicode.com/posts)
+
+Environment:
+- JSONPlaceholder API (https://jsonplaceholder.typicode.com/posts)
+- Java JDK 25
+- REST Assured
+- JUnit 5
+- Apache Maven
+- Windows 11
+
 Severity: Medium
+Severity Justification:
+The API accepts incomplete data, which may result in invalid or low-quality records being created. However, the defect does not prevent users from accessing or using the application.
+
 Priority: Medium
+Priority Justification:
+Input validation should be implemented to maintain data integrity and prevent invalid submissions from being accepted.
+
 Status: New
+
 Reported By: Abdulkarim Noorzaie
 Date: July 7, 2026
+
 Steps to Reproduce:
 
-Send a POST request to https://jsonplaceholder.typicode.com/posts.
-Use the following request body:
+1. Send a POST request to https://jsonplaceholder.typicode.com/posts.
+2. Use the following request body:
+
 {
-"title": "Test Post"
+  "title": "Test Post"
 }
-Submit the request.
+
+3. Submit the request using the automated REST Assured test suite.
 
 Expected Result:
+
 The API should return a 400 Bad Request response indicating that required fields are missing.
+
 Actual Result:
+
 The API returns a 201 Created response and accepts the request despite missing fields such as body and userId.
+
 Root Cause (if known):
+
 The API does not perform validation on required request fields before accepting the request.
+
 Attachments:
 
-Screenshot of the POST request in Postman
-Screenshot of the response showing HTTP 201 Created
-Request payload used during testing
-Postman test execution results
+- REST Assured test used during execution
+- Screenshot of test execution results
+- Request payload used during testing
+- Response showing HTTP 201 Created
 
+
+------------------------------------------------------------------
 
 
 Defect ID: DEF-002
 
 Title: GET /posts Response Time Exceeds Performance Requirement
-Environment: JSONPlaceholder API (https://jsonplaceholder.typicode.com/posts)
+
+Environment:
+- JSONPlaceholder API (https://jsonplaceholder.typicode.com/posts)
+- Java JDK 25
+- REST Assured
+- JUnit 5
+- Apache Maven
+- Windows 11
+
 Severity: Low
+Severity Justification:
+The defect affects performance expectations but does not impact the functionality or availability of the API.
+
 Priority: Low
+Priority Justification:
+The issue appears intermittent and does not prevent users from successfully retrieving data.
+
 Status: New
+
 Reported By: Abdulkarim Noorzaie
 Date: July 7, 2026
+
 Steps to Reproduce:
 
-Send a GET request to https://jsonplaceholder.typicode.com/posts.
-Execute the request multiple times using Postman.
-Monitor the response time for each request.
+1. Send a GET request to https://jsonplaceholder.typicode.com/posts.
+2. Execute the request multiple times using the automated REST Assured test suite.
+3. Monitor the response time reported by the test execution.
+4. Compare the response time against the defined threshold of 2000 milliseconds.
 
 Expected Result:
+
 Response time should consistently remain below 2000 milliseconds as defined in the performance test case.
+
 Actual Result:
+
 Some requests exceed the 2000 millisecond threshold, causing the automated response time validation to fail.
+
 Root Cause (if known):
+
 Potential network latency or temporary performance degradation on the public API server. Further investigation is required.
 
 Attachments:
 
-Screenshot showing response times exceeding 2000 ms
-Postman test failure output
-Collection Runner execution results
-Response timing details from Postman
+- Screenshot of REST Assured test execution
+- Test output showing response times above 2000 ms
+- Maven test execution results
+- Response timing details captured during automated testing
+
+
+------------------------------------------------------------------
 
 
 Defect ID: DEF-003
+
 Title: Password Field Does Not Mask Characters When Typing
-Environment: OrangeHRM Demo Application
+
+Environment:
+- OrangeHRM Demo Application
+- Google Chrome
+- Windows 11
+
 Severity: High
+Severity Justification:
+Passwords are exposed on screen while being entered, creating a significant security and privacy risk for users.
+
 Priority: High
+Priority Justification:
+The defect impacts user security and should be corrected immediately to prevent potential exposure of sensitive credentials.
+
 Status: New
+
 Reported By: Maleesha Wanniarachchige
 Date: July 7, 2026
+
 Steps to Reproduce:
 
-Navigate to the OrangeHRM login page.
-Click inside the Password field.
-Enter any password value.
+1. Navigate to the OrangeHRM login page.
+2. Click inside the Password field.
+3. Enter any password value.
 
 Expected Result:
+
 Characters entered into the Password field should be hidden and displayed as dots or asterisks.
+
 Actual Result:
+
 Characters entered into the Password field are displayed in plain text.
+
 Root Cause (if known):
-The password input field may be configured with the incorrect HTML input type.
+
+The password input field may be configured with an incorrect HTML input type instead of using a secure password field.
+
 Attachments:
 
-Screenshot of the login page showing visible password characters
-Browser information
-Screen recording demonstrating the issue
+- Screenshot of the login page showing visible password characters
+- Browser information
+- Screen recording demonstrating the issue

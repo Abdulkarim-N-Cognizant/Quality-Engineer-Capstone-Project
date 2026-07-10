@@ -1,25 +1,55 @@
+# JSONPlaceholder API Test Suite
 
-How to Run
+## Overview
 
-This Postman collection contains API tests for the JSONPlaceholder Posts endpoint:
+This project contains an automated API test suite for the JSONPlaceholder `/posts` endpoint using Java, JUnit 5, and REST Assured.
 
+API Endpoint:
 https://jsonplaceholder.typicode.com/posts
 
-Prerequisites:
-- Postman installed
+## Prerequisites
 
-Steps:
-1. Import the provided collection JSON into Postman.
-2. Open the collection.
-3. Click "Run collection" or execute individual requests.
-4. Review the test results in the Postman runner.
+- Java 17 or later
+- Apache Maven
+- Internet connection
 
-Expected Result:
-- All requests should return successful HTTP status codes.
-- All included Postman test scripts should pass.
+## Running the Tests
 
-Notes:
-- No environment variables are required.
+1. Open a terminal in the project root directory.
+2. Run the following command:
+
+```bash
+mvn test
+```
+
+3. Maven will execute all test cases and display the results in the console.
+
+## Test Coverage
+
+The suite includes:
+
+- GET all posts
+- GET specific post
+- GET posts by user ID
+- Response structure validation
+- Response time validation
+- POST create post
+- PUT update post
+- DELETE post
+- Negative test (404 Not Found)
+- Chained request test
+
+## Expected Result
+
+```text
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 0
+
+BUILD SUCCESS
+```
+
+## Notes
+
+- The tests use the public JSONPlaceholder API.
 - No authentication is required.
-- The collection uses the public JSONPlaceholder API.
-- Trainer allowed the use of Postman for API testing due to software limitations
+- No environment variables are required.
+- A Postman collection was also created during development for exploratory and manual API testing.

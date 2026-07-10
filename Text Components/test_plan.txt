@@ -12,6 +12,7 @@ In Scope
 This project focuses on testing two application layers:
 
 API Testing
+
 Application: JSONPlaceholder API
 
 Endpoints Tested:
@@ -22,6 +23,7 @@ Endpoints Tested:
 - Error handling scenarios (404 responses)
 
 UI Testing
+
 Application: OrangeHRM
 
 Features Tested:
@@ -48,11 +50,11 @@ The primary objective of this testing effort is to verify that both the API and 
 Specific objectives include:
 
 - Validate CRUD operations within the JSONPlaceholder API.
-- Verify accurate API responses, status codes, and data structures.
+- Verify accurate API responses, status codes, response times, and data structures.
 - Ensure OrangeHRM user workflows operate correctly.
 - Confirm UI elements behave as expected.
 - Identify defects affecting functionality and usability.
-- Demonstrate automation skills using Selenium and Java.
+- Demonstrate automation skills using Selenium and REST Assured.
 - Validate application quality through manual and automated testing.
 
 3. TESTING LEVELS
@@ -84,7 +86,7 @@ Functional Testing
 
 API Testing
 
-- Validate HTTP methods, responses, status codes, and payloads.
+- Validate HTTP methods, responses, status codes, payloads, and error handling.
 
 UI Automation Testing
 
@@ -104,6 +106,11 @@ Accessibility Testing
 - Basic WCAG compliance observations.
 - Colour contrast review.
 
+Performance Testing
+
+- Validate API response times against defined thresholds.
+- Execute load testing activities using JMeter.
+
 Cross-Browser Testing
 
 - Verify functionality across different browsers where applicable.
@@ -111,36 +118,60 @@ Cross-Browser Testing
 5. TOOLS AND FRAMEWORKS
 
 Java
+
 Purpose: Automation development
-Reason for Selection: Improve Java development skills and align with industry-standard automation frameworks.
+
+Reason for Selection:
+Improves Java development skills and aligns with industry-standard automation frameworks.
 
 Selenium WebDriver
-Purpose: UI automation
-Reason for Selection: Widely used tool for browser automation and end-to-end testing.
 
-Postman
-Purpose: API testing
-Reason for Selection: Efficient API testing tool approved for project requirements and compatible with workplace restrictions.
+Purpose: UI automation
+
+Reason for Selection:
+Widely used tool for browser automation and end-to-end testing.
+
+REST Assured
+
+Purpose: Automated API testing
+
+Reason for Selection:
+Industry-standard Java library for API automation that integrates seamlessly with JUnit and Maven.
 
 Maven
+
 Purpose: Dependency management and build automation
-Reason for Selection: Simplifies project structure, dependency management, and test execution.
+
+Reason for Selection:
+Simplifies project structure, dependency management, and test execution.
 
 IntelliJ IDEA
+
 Purpose: Development environment
-Reason for Selection: Provides strong Java development and automation support.
+
+Reason for Selection:
+Provides strong Java development and automation support.
 
 JMeter
-Purpose: Load testing
-Reason for Selection: Industry-standard tool for API performance testing.
+
+Purpose: Load and performance testing
+
+Reason for Selection:
+Industry-standard tool for performance and load testing.
 
 GitHub
+
 Purpose: Source code management
-Reason for Selection: Enables version control and project collaboration.
+
+Reason for Selection:
+Enables version control, collaboration, and project tracking.
 
 Cucumber
-Purpose: Behavior-driven development testing
-Reason for Selection: Supports business-readable test scenarios and improves stakeholder communication.
+
+Purpose: Behavior-Driven Development (BDD)
+
+Reason for Selection:
+Supports business-readable test scenarios and improves stakeholder communication.
 
 6. ENTRY AND EXIT CRITERIA
 
@@ -151,7 +182,7 @@ Testing may begin when:
 - Application URLs are accessible.
 - Test environment is available.
 - Test cases have been prepared.
-- Automation framework has been configured.
+- Automation frameworks have been configured.
 - Required tools have been installed successfully.
 
 Exit Criteria
@@ -171,19 +202,23 @@ Testing will be considered complete when:
 Risk 1: Third-Party Service Availability
 
 Description:
+
 JSONPlaceholder is a public API and may experience outages or response delays.
 
 Mitigation:
+
 - Perform testing during multiple time periods.
 - Retest failures before logging defects.
-- Capture API evidence using Postman and screenshots.
+- Capture API evidence using REST Assured test results and screenshots.
 
 Risk 2: UI Changes in OrangeHRM
 
 Description:
+
 Page elements or locators may change and cause automation failures.
 
 Mitigation:
+
 - Use reliable locators where possible.
 - Implement the Page Object Model (POM) design pattern.
 - Maintain locator centralization for easier updates.
@@ -191,12 +226,15 @@ Mitigation:
 Risk 3: Environment or Browser Issues
 
 Description:
-Browser updates or environment restrictions may affect automation execution.
+
+Browser updates, Java version conflicts, or environment restrictions may affect automation execution.
 
 Mitigation:
+
 - Use stable browser versions.
 - Verify environment configuration before execution.
 - Document environment details in test reports.
+- Validate compatibility before running automated tests.
 
 8. DELIVERABLES
 
@@ -204,8 +242,8 @@ The following artifacts will be submitted:
 
 - Test Plan Document
 - Test Cases Document
-- API Test Automation Project
-- UI Test Automation Project
+- Java REST Assured API Test Automation Project
+- Selenium UI Test Automation Project
 - BDD Feature Files and Step Definitions
 - Defect Reports
 - Test Execution Summary
@@ -213,4 +251,4 @@ The following artifacts will be submitted:
 - Accessibility Testing Evidence
 - Screenshots and Test Evidence
 - Presentation Slides
-- Final Capstone Submission ZIP or GitHub
+- Final Capstone Submission ZIP or GitHub Repository
