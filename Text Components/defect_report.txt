@@ -114,20 +114,22 @@ Attachments:
 
 Defect ID: DEF-003
 
-Title: Password Field Does Not Mask Characters When Typing
+Title: Forgot Password Request Intermittently Returns 504 Gateway Timeout
 
 Environment:
 - OrangeHRM Demo Application
 - Google Chrome
 - Windows 11
 
-Severity: High
-Severity Justification:
-Passwords are exposed on screen while being entered, creating a significant security and privacy risk for users.
+Severity: Medium
 
-Priority: High
+Severity Justification:
+The defect impacts a key account recovery function and may prevent users from resetting their passwords. However, users who still know their credentials can continue using the application normally.
+
+Priority: Medium
+
 Priority Justification:
-The defect impacts user security and should be corrected immediately to prevent potential exposure of sensitive credentials.
+Password recovery is an important user workflow. The issue should be addressed to improve reliability and user experience, but it does not completely prevent access for all users.
 
 Status: New
 
@@ -136,24 +138,27 @@ Date: July 7, 2026
 
 Steps to Reproduce:
 
-1. Navigate to the OrangeHRM login page.
-2. Click inside the Password field.
-3. Enter any password value.
+1. Navigate to the OrangeHRM password reset page.
+2. Enter the username "Admin".
+3. Click the Reset Password button.
+4. Repeat the process multiple times if necessary.
 
 Expected Result:
 
-Characters entered into the Password field should be hidden and displayed as dots or asterisks.
+A password reset request should be successfully processed and a confirmation message should be displayed indicating that the password reset instructions have been sent.
 
 Actual Result:
 
-Characters entered into the Password field are displayed in plain text.
+The password reset request intermittently fails and displays a "504 Gateway Timeout" error page instead of a successful confirmation message.
 
 Root Cause (if known):
 
-The password input field may be configured with an incorrect HTML input type instead of using a secure password field.
+Potential server-side timeout, network communication issue, or temporary service unavailability during password reset request processing. Further investigation is required.
 
 Attachments:
 
-- Screenshot of the login page showing visible password characters
+- Screenshot of the 504 Gateway Timeout error page
+- Screenshot of the password reset form
 - Browser information
-- Screen recording demonstrating the issue
+- Screen recording demonstrating the intermittent failure
+- Test execution evidence from the Forgot Password regression scenario

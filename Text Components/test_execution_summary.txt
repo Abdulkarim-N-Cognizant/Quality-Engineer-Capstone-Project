@@ -1,0 +1,71 @@
+TEST EXECUTION SUMMARY
+
+Project: Cross-Platform QA Showcase
+
+Tester(s):
+- Abdulkarim Noorzaie
+- Maleesha Wanniarachchige
+
+Execution Period:
+July 7, 2026 - July 10, 2026
+
+Test Case Results:
+
+Total Test Cases: 22
+Passed: 21
+Failed: 0
+Blocked: 0
+Not Executed: 1
+
+Automated Test Results:
+
+API Tests: 11/11 Passed
+UI Tests: 10/11 Passed
+BDD Scenarios: 10/11 Passed
+
+Defects Found:
+
+Total: 3
+
+Critical: 0
+
+High: 0
+
+Medium: 2
+- DEF-001: POST /posts Accepts Request with Missing Required Fields
+- DEF-003: Forgot Password Request Intermittently Returns 504 Gateway Timeout
+
+Low: 1
+- DEF-002: GET /posts Response Time Exceeds Performance Requirement
+
+Quality Assessment:
+
+Overall, the applications demonstrated acceptable stability and functionality during testing. All API automation tests executed successfully and validated core CRUD operations, response structures, error handling, and chained request scenarios. The OrangeHRM UI workflows were generally reliable, with only one scenario skipped during execution and an intermittent issue observed within the password reset functionality.
+
+The identified defects primarily involve input validation, intermittent performance concerns, and password recovery reliability. While these issues should be addressed, they do not prevent successful execution of the application's primary business functions.
+
+Recommendations:
+
+- Implement server-side validation for required API request fields to prevent invalid data submissions.
+- Investigate and resolve the intermittent 504 Gateway Timeout issue affecting the OrangeHRM password reset functionality.
+- Continue monitoring API response times and establish consistent performance thresholds to identify potential degradation.
+- Retest all identified defects after fixes are implemented and execute a full regression test cycle before release.
+
+Execution Summary:
+
+API Test Suite Results:
+- Total Tests: 11
+- Passed: 11
+- Failed: 0
+- Skipped: 0
+- Build Status: SUCCESS
+
+UI Automation Results:
+- Total Tests: 11
+- Passed: 10
+- Failed: 0
+- Skipped: 1
+- Build Status: SUCCESS
+
+Overall Project Status:
+PASS WITH MINOR DEFECTS IDENTIFIED
