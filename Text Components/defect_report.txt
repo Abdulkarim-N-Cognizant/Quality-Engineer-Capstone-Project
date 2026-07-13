@@ -1,0 +1,164 @@
+Defect ID: DEF-001
+
+Title: POST /posts Accepts Request with Missing Required Fields
+
+Environment:
+- JSONPlaceholder API (https://jsonplaceholder.typicode.com/posts)
+- Java JDK 25
+- REST Assured
+- JUnit 5
+- Apache Maven
+- Windows 11
+
+Severity: Medium
+Severity Justification:
+The API accepts incomplete data, which may result in invalid or low-quality records being created. However, the defect does not prevent users from accessing or using the application.
+
+Priority: Medium
+Priority Justification:
+Input validation should be implemented to maintain data integrity and prevent invalid submissions from being accepted.
+
+Status: New
+
+Reported By: Abdulkarim Noorzaie
+Date: July 7, 2026
+
+Steps to Reproduce:
+
+1. Send a POST request to https://jsonplaceholder.typicode.com/posts.
+2. Use the following request body:
+
+{
+  "title": "Test Post"
+}
+
+3. Submit the request using the automated REST Assured test suite.
+
+Expected Result:
+
+The API should return a 400 Bad Request response indicating that required fields are missing.
+
+Actual Result:
+
+The API returns a 201 Created response and accepts the request despite missing fields such as body and userId.
+
+Root Cause (if known):
+
+The API does not perform validation on required request fields before accepting the request.
+
+Attachments:
+
+- REST Assured test used during execution
+- Screenshot of test execution results
+- Request payload used during testing
+- Response showing HTTP 201 Created
+
+
+------------------------------------------------------------------
+
+
+Defect ID: DEF-002
+
+Title: GET /posts Response Time Exceeds Performance Requirement
+
+Environment:
+- JSONPlaceholder API (https://jsonplaceholder.typicode.com/posts)
+- Java JDK 25
+- REST Assured
+- JUnit 5
+- Apache Maven
+- Windows 11
+
+Severity: Low
+Severity Justification:
+The defect affects performance expectations but does not impact the functionality or availability of the API.
+
+Priority: Low
+Priority Justification:
+The issue appears intermittent and does not prevent users from successfully retrieving data.
+
+Status: New
+
+Reported By: Abdulkarim Noorzaie
+Date: July 7, 2026
+
+Steps to Reproduce:
+
+1. Send a GET request to https://jsonplaceholder.typicode.com/posts.
+2. Execute the request multiple times using the automated REST Assured test suite.
+3. Monitor the response time reported by the test execution.
+4. Compare the response time against the defined threshold of 2000 milliseconds.
+
+Expected Result:
+
+Response time should consistently remain below 2000 milliseconds as defined in the performance test case.
+
+Actual Result:
+
+Some requests exceed the 2000 millisecond threshold, causing the automated response time validation to fail.
+
+Root Cause (if known):
+
+Potential network latency or temporary performance degradation on the public API server. Further investigation is required.
+
+Attachments:
+
+- Screenshot of REST Assured test execution
+- Test output showing response times above 2000 ms
+- Maven test execution results
+- Response timing details captured during automated testing
+
+
+------------------------------------------------------------------
+
+
+Defect ID: DEF-003
+
+Title: Forgot Password Request Intermittently Returns 504 Gateway Timeout
+
+Environment:
+- OrangeHRM Demo Application
+- Google Chrome
+- Windows 11
+
+Severity: Medium
+
+Severity Justification:
+The defect impacts a key account recovery function and may prevent users from resetting their passwords. However, users who still know their credentials can continue using the application normally.
+
+Priority: Medium
+
+Priority Justification:
+Password recovery is an important user workflow. The issue should be addressed to improve reliability and user experience, but it does not completely prevent access for all users.
+
+Status: New
+
+Reported By: Maleesha Wanniarachchige
+Date: July 7, 2026
+
+Steps to Reproduce:
+
+1. Navigate to the OrangeHRM password reset page.
+2. Enter the username "Admin".
+3. Click the Reset Password button.
+4. Repeat the process multiple times if necessary.
+
+Expected Result:
+
+A password reset request should be successfully processed and a confirmation message should be displayed indicating that the password reset instructions have been sent.
+
+Actual Result:
+
+The password reset request intermittently fails and displays a "504 Gateway Timeout" error page instead of a successful confirmation message.
+
+Root Cause (if known):
+
+Potential server-side timeout, network communication issue, or temporary service unavailability during password reset request processing. Further investigation is required.
+
+Attachments:
+
+- Screenshot of the 504 Gateway Timeout error page
+- Screenshot of the password reset form
+- Browser information
+- Screen recording demonstrating the intermittent failure
+- Test execution evidence from the Forgot Password regression scenario

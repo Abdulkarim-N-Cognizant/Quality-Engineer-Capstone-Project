@@ -1,0 +1,6 @@
+Jmeter Summary:
+
+A JMeter load test was conducted against the JSONPlaceholder GET /posts endpoint using 50 virtual users and 10 iterations per user, resulting in a total of 500 requests. 
+All requests completed successfully with HTTP 200 responses, indicating reliable endpoint availability throughout the test. 
+The HTML dashboard reported an APDEX score of 1.000, demonstrating excellent user-perceived performance and response times within the defined thresholds. 
+Overall, the endpoint handled the simulated load efficiently with no observed performance issues or errors.

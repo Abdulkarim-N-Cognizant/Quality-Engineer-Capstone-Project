@@ -1,0 +1,251 @@
+API TEST CASES
+
+ID: TC_API_01
+Title: GET /posts Returns 200 OK
+Testing Level: Integration
+Test Type: Functional – Positive
+Preconditions: API is reachable
+Steps:
+1. Send GET request to https://jsonplaceholder.typicode.com/posts
+Expected Result:
+- Response code 200 OK
+- Response body contains an array of posts
+- Posts contains all required fields
+Actual Result: A GET request was sent to https://jsonplaceholder.typicode.com/posts.
+The API returned a 200 OK response. The response body contained an array of posts,
+and each post included the required fields: id, userId, title, and body.
+Status: TEST PASS
+
+
+ID: TC_API_02
+Title: GET /posts/{id} Returns Correct Post Data
+Testing Level: Integration
+Test Type: Functional – Positive
+Preconditions: Valid post ID exists
+Steps:
+1. Send GET request to https://jsonplaceholder.typicode.com/posts/1
+Expected Result:
+- Response code 200 OK
+- Response body contains post with id = 1
+- Post contains required fields: id, userId, title, body
+Actual Result: A GET request was sent to /posts/1. The API returned a 200 OK response.
+The response body contained the correct post with id = 1, and all required fields
+(id, userId, title, body) were present and valid.
+Status: TEST PASS
+
+ID: TC_API_03
+Title: POST /posts Creates New Resource With Valid Payload
+Testing Level: Integration
+Test Type: Functional – Positive
+Preconditions: API is reachable
+Steps:
+1. Prepare JSON payload:
+   { "title": "test title", "body": "sample body", "userId": 1 }
+2. Send POST request to https://jsonplaceholder.typicode.com/posts
+Expected Result:
+- Response code 201 Created
+- Response body contains submitted fields
+- Response includes a new id field
+Actual Result: A POST request was sent with the valid JSON payload. The API returned
+a 201 Created response. The response body contained the submitted title, body, and
+userId, along with a newly generated id field.
+Status: TEST PASS
+
+
+ID: TC_API_04
+Title: GET /posts/{invalid_id} Returns 404 or Empty Object
+Testing Level: Integration
+Test Type: Negative – Error Handling
+Preconditions: Invalid ID (e.g., 999999)
+Steps:
+1. Send GET request to https://jsonplaceholder.typicode.com/posts/999999
+Expected Result:
+- Response code 404 OR empty object {}
+Actual Result: A GET request was sent to /posts/999999. The API returned an empty
+object, indicating no resource exists for the invalid ID.
+Status: TEST PASS
+
+
+ID: TC_API_05
+Title: POST /posts With Missing Fields
+Testing Level: Integration
+Test Type: Negative – Validation
+Preconditions: API is reachable
+Steps:
+1. Send POST request with empty JSON {}
+Expected Result:
+- JSONPlaceholder returns 201 Created
+- Response body contains empty or null fields
+Actual Result: A POST request was sent with an empty JSON payload. The API returned
+a 201 Created response. The response body contained an id field and empty values for
+other fields, matching JSONPlaceholder’s default behavior.
+Status: TEST PASS
+
+
+
+
+
+UI TEST CASES
+
+ID: TC_UI_06
+Title: Login Page Loads Successfully
+Testing Level: System
+Test Type: Functional – Positive
+Preconditions: User navigates to OrangeHRM login page
+Steps:
+1. Open OrangeHRM login URL
+Expected Result:
+- Login form is visible
+- Username and password fields are displayed
+Actual Result: The login page loaded successfully. The username field, password
+field, and login button were visible and ready for interaction.
+Status: TEST PASS
+
+
+ID: TC_UI_07
+Title: Successful Login With Valid Credentials
+Testing Level: System
+Test Type: Functional – Positive
+Preconditions: Valid credentials available
+Steps:
+1. Enter valid username
+2. Enter valid password
+3. Click Login
+Expected Result:
+- User is redirected to dashboard
+- Dashboard elements load correctly
+Actual Result: Valid credentials were entered and the Login button was clicked.
+The user was redirected to the dashboard, where the profile icon, navigation menu,
+and widgets loaded correctly.
+Status: TEST PASS
+
+ID: TC_UI_08
+Title: Error Message for Invalid Login
+Testing Level: System
+Test Type: Negative – Validation
+Preconditions: Invalid credentials
+Steps:
+1. Enter invalid username
+2. Enter invalid password
+3. Click Login
+Expected Result:
+- Error message "Invalid credentials" is displayed
+Actual Result: Invalid credentials were entered and the Login button was clicked.
+The system displayed the message "Invalid credentials" below the login form.
+Status: TEST PASS
+
+ID: TC_UI_09
+Title: Required Field Validation on Add Employee Form
+Testing Level: System
+Test Type: Functional – Validation
+Preconditions: User logged in, Add Employee page open
+Steps:
+1. Leave First Name empty
+2. Leave Last Name empty
+3. Click Save
+Expected Result:
+- "Required" validation messages appear
+Actual Result: The Save button was clicked with empty First Name and Last Name
+fields. The system displayed "Required" validation messages under both fields.
+Status: TEST PASS
+
+ID: TC_UI_10
+Title: Employee Creation With Valid Data
+Testing Level: System
+Test Type: Functional – Positive
+Preconditions: User logged in
+Steps:
+1. Navigate to PIM → Add Employee
+2. Enter valid First Name and Last Name
+3. Click Save
+4. Search for employee in Employee List
+Expected Result:
+- Employee profile is created
+- Employee appears in list
+Actual Result: A new employee was created using valid First Name and Last Name.
+The profile page loaded successfully. The employee was found in the Employee List
+after performing a search.
+Status: TEST PASS
+
+
+
+ACCESSIBILITY TEST CASES
+
+ID: TC_ACC_11
+Title: Keyboard Navigation on Login Page
+Testing Level: Accessibility
+Test Type: Functional – Positive
+Preconditions: Login page loaded
+Steps:
+1. Press Tab repeatedly
+Expected Result:
+- Focus moves Username → Password → Login button
+Actual Result: Pressing Tab moved focus in the correct order: Username field,
+Password field, then Login button. The focus indicator was visible throughout.
+Status: TEST PASS
+
+
+ID: TC_ACC_12
+Title: Color Contrast Meets WCAG AA
+Testing Level: Accessibility
+Test Type: Compliance
+Preconditions: Login page loaded
+Steps:
+1. Use contrast checker tool
+Expected Result:
+- Contrast ratio ≥ 4.5:1
+Actual Result: A contrast checker was used to evaluate text and background colors.
+All tested elements met or exceeded the WCAG AA requirement of 4.5:1.
+Status: TEST PASS
+
+
+CROSS‑DEVICE / CROSS‑BROWSER TEST CASES
+
+ID: TC_CROSS_13
+Title: Login Page Renders Correctly on Mobile (iPhone 12 Safari)
+Testing Level: Compatibility
+Test Type: Functional
+Preconditions: Access OrangeHRM on mobile device
+Steps:
+1. Open login page on Safari mobile
+Expected Result:
+- Page renders correctly
+- Fields are visible and usable
+Actual Result: The login page rendered correctly on Safari mobile. All fields were
+visible, responsive, and usable without layout issues.
+Status: TEST PASS
+
+
+ID: TC_CROSS_14
+Title: Dashboard Loads Consistently Across Browsers
+Testing Level: Compatibility
+Test Type: Functional
+Preconditions: Valid login credentials
+Steps:
+1. Log in using Chrome
+2. Log in using Firefox
+3. Log in using Edge
+Expected Result:
+- Dashboard layout is consistent across browsers
+Actual Result: The dashboard was accessed on Chrome, Firefox, and Edge. The layout,
+widgets, and navigation menu appeared consistent across all three browsers.
+Status: TEST PASS
+
+
+
+NEGATIVE TEST CASE
+
+ID: TC_NEG_15
+Title: Network Disconnect During Login
+Testing Level: System
+Test Type: Negative – Reliability
+Preconditions: Login page loaded
+Steps:
+1. Enter valid credentials
+2. Disable network connection
+3. Click Login
+Expected Result:
+- Error message displayed
+Actual Result: After disabling the network and clicking Login, the system displayed
+a network error message and remained on the login page without logging in.
+Status: TEST PASS
