@@ -37,3 +37,64 @@ build/
 
 ### Mac OS ###
 .DS_Store
+
+### Maven ###
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+
+### Logs ###
+*.log
+logs/
+
+### Test Reports ###
+surefire-reports/
+failsafe-reports/
+test-output/
+allure-results/
+allure-report/
+cucumber-reports/
+extent-reports/
+
+### Screenshots ###
+screenshots/
+*.png
+
+### Generated Files ###
+generated-sources/
+generated-test-sources/
+
+### Environment / Secrets ###
+.env
+.env.*
+application-local.properties
+
+### OS Files ###
+.DS_Store
+Thumbs.db
+
+### Selenium ###
+drivers/
+webdriver/
+
+### IntelliJ ###
+.idea/
+*.iml
+
+### VS Code ###
+.vscode/
+
+### Eclipse ###
+.project
+.classpath
+.settings/
+
+### Build Artifacts ###
+build/
+out/
+
+### Java ###
+*.class
