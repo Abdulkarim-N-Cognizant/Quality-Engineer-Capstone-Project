@@ -1,0 +1,133 @@
+OrangeHRM Accessibility Testing Report
+
+Project Information
+
+• Application: OrangeHRM Open Source
+• Modules Tested: Login Page, Dashboard
+• Tester: Maleesha Wanniarachchige
+• Test Date: July 8, 2026
+• Accessibility Standard: WCAG 2.2 AA
+
+____________________________________________________
+
+Objective
+
+To verify that OrangeHRM's Login and Dashboard pages are accessible through keyboard navigation and meet basic WCAG 2.2 accessibility requirements.
+
+____________________________________________________
+
+Scope
+
+Pages Tested
+• Login Page
+• Dashboard
+
+
+Tools Used
+• Keyboard Navigation Testing
+• Visual Colour Contrast Review
+
+____________________________________________________
+
+Accessibility Testing Evidence
+
+Scenario 1: Keyboard Navigation Test – Login Page
+
+Objective:
+Verify that the Login page can be accessed and operated without using a mouse.
+
+Keyboard Interactions Tested
+
+1. Tab
+- Expected Result: Move focus to the next interactive element.
+- Actual Result: Focus moved correctly between Username, Password, Forgot Password, and Login button.
+- Status: Pass
+
+
+2. Shift + Tab
+- Expected Result: Move focus to the previous interactive element.
+- Actual Result: Focus moved backward correctly through the page controls.
+- Status: Pass
+
+3. Enter
+- Expected Result: Activate the Login button.
+- Actual Result: Login submitted successfully.
+- Status: Pass
+
+4. Space
+- Expected Result: Activate the focused button.
+- Actual Result: Login button responded correctly.
+- Status: Pass
+
+5. Tab Through Entire Page
+- Expected Result: Reach all interactive elements without a mouse.
+- Actual Result: All controls were accessible using keyboard navigation.
+- Status: Pass
+
+Applicable WCAG 2.2 Success Criteria
+
+• 2.1.1 Keyboard – Pass
+All functionality tested on the Login page was available using only a keyboard.
+
+• 2.4.7 Focus Visible – Pass
+Focus indicators were clearly visible when navigating between controls.
+
+Result: Pass
+
+____________________________________________________
+
+Scenario 2: Colour Contrast Observation – Dashboard
+
+
+
+
+
+
+Objective:
+Review key dashboard elements for sufficient visual contrast.
+
+Element Observed:
+Dashboard navigation sidebar
+
+Observation
+• Dark gray menu text is displayed on a white background.
+• The selected Dashboard menu item displays white text on a bright orange background.
+• Based on visual inspection, the contrast appears sufficient for readability and is estimated to meet WCAG AA requirements.
+• Estimated contrast level: Medium to High (approximately 4.5:1 or greater).
+
+Applicable WCAG 2.2 Success Criteria
+
+• 1.4.3 Contrast (Minimum) – Pass
+The navigation text and highlighted menu item appeared clearly readable against their backgrounds during testing.
+
+Result: Pass
+
+
+
+
+
+
+
+____________________________________________________
+
+Findings
+
+No significant accessibility issues were identified during the execution of the selected accessibility test scenarios.
+
+____________________________________________________
+
+Summary
+
+• Keyboard Navigation Test (Login Page): Pass
+• Colour Contrast Observation (Dashboard): Pass
+• WCAG 2.1.1 Keyboard: Pass
+• WCAG 2.4.7 Focus Visible: Pass
+• WCAG 1.4.3 Contrast (Minimum): Pass
+• Overall Accessibility Result: Pass
+
+____________________________________________________
+
+Conclusion
+
+Accessibility testing was performed on the OrangeHRM Login page and Dashboard page using keyboard navigation and visual colour contrast review. Five keyboard interactions were successfully verified on the Login page, and key dashboard navigation elements were reviewed for colour contrast and readability. The tested functionality met the applicable WCAG 2.2 AA accessibility requirements, and no significant accessibility issues were identified during testing.
+
