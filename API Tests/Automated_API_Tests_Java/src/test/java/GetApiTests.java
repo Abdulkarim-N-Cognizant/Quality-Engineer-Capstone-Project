@@ -7,31 +7,7 @@ import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
 import io.restassured.http.ContentType;
 
-public class PostsApiTest {
-
-    static RequestSpecification spec;
-
-    // Before all set up due to firewall restrictions
-    @BeforeAll
-    static void setup() {
-        System.setProperty(
-                "javax.net.ssl.trustStore",
-                "src/test/resources/truststore.jks"
-        );
-
-        System.setProperty(
-                "javax.net.ssl.trustStorePassword",
-                "changeit"
-        );
-        baseURI = "https://jsonplaceholder.typicode.com";
-        spec = new RequestSpecBuilder()
-                .setBaseUri(baseURI)
-                .setContentType(ContentType.JSON)
-                .addHeader("Accept", "application/json")
-                .build();
-    }
-
-
+public class GetApiTests extends  ApiTestSetup{
     // GET test cases
     @Test
     void getAllPosts(){
@@ -108,51 +84,6 @@ public class PostsApiTest {
                 .statusCode(404);
     }
 
-    //POST requests
-    @Test
-    void createNewPost(){
-        String json = "{ \"title\": \"Post Title\", \"body\": \"Post Body\", \"userId\": 1 }";
-
-        given().spec(spec)
-                .when()
-                .body(json)
-                .post("/posts")
-                .then()
-                .statusCode(201)
-                .body("title", equalTo("Post Title"))
-                .body("body", equalTo("Post Body"))
-                .body("userId", equalTo(1));
-    }
-
-    // UPDATE (PUT) Post
-    @Test
-    void updatePost(){
-        String json = "{ \"title\": \"New Post Title\", \"body\": \"Updated and new Post Body\", \"userId\": 1, \"id\": 1 }";
-
-        given().spec(spec)
-                .when()
-                .body(json)
-                .put("/posts/1")
-                .then()
-                .statusCode(200)
-                .body("title", equalTo("New Post Title"))
-                .body("body", equalTo("Updated and new Post Body"))
-                .body("userId", equalTo(1))
-                .body("id", equalTo(1))
-
-        ;
-    }
-
-    // DELETE Post
-    @Test
-    void deletePost(){
-        given().spec(spec)
-                .when()
-                .delete("/posts/10")
-                .then()
-                .statusCode(oneOf(200,201,204))
-                .body(equalTo("{}"));
-    }
 
     // CHAINED REQUEST
     @Test

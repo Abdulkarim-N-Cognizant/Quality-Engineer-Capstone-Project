@@ -2,7 +2,7 @@ TEST PLAN DOCUMENT
 
 Project: Cross-Platform QA Showcase
 Author: Abdulkarim Noorzaie, Maleesha Wanniarachchige
-Date: July 8, 2026
+Date: July 15, 2026
 Version: 1.0
 
 1. SCOPE
