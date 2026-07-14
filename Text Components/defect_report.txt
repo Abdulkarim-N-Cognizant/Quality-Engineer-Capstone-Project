@@ -10,11 +10,11 @@ Environment:
 - Apache Maven
 - Windows 11
 
-Severity: Medium
+Severity: Major
 Severity Justification:
 The API accepts incomplete data, which may result in invalid or low-quality records being created. However, the defect does not prevent users from accessing or using the application.
 
-Priority: Medium
+Priority: High
 Priority Justification:
 Input validation should be implemented to maintain data integrity and prevent invalid submissions from being accepted.
 
